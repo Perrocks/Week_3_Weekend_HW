@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <ul>
+        <li clas="nav-link"><a href="/books">Library Home</a></li>
+      </ul>
+      <hr>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='order.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h2>Title: {{ books_html.title }}</h2>
+    <h2>Author: {{ books_html.author }}</h2>
+    <p>Genre: {{ books_html.genre }}</p>
+    <p>Description: {{ books_html.description }}</p>
+    <p>Available to borrow:  
+        {% if books_html.availability%}
+        <span>&#9989;</span>
+        {%else%}
+        <span>&#10060;</span>
+        {%endif%}
+    </p>
+
+
+</body>
+</html>

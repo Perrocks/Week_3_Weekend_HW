@@ -1,0 +1,53 @@
+body
+
+{font-family: Arial, Helvetica, sans-serif;
+
+background-color: #b4b4b4;}
+
+body > ul 
+{
+list-style: none;}
+
+a:link{
+    text-decoration: none;
+    color:green
+}
+a:visited{
+    color:teal;
+}
+a:hover{
+    text-decoration: underline;
+    color: greenyellow;
+}
+
+.nav-link li {margin: 20px;}
+  
+  
+.input label {
+margin: 1px 1px 1px 1px;}
+
+.input textarea input[type=text]
+{
+  vertical-align: left;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: rgb(180, 180, 180);
+  border: 1px solid #ddd;
+}
+
+.input input[type=submit] {
+  padding: 10px 20px;
+  background-color: #c91c1c;
+  border: 1px solid rgb(255, 208, 208);
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+}
+
+.input input[type=submit]:hover {
+  background-color: #f48181;
+}
+
+
+
+

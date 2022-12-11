@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <title>{{ title }} - Book List</title>
+</head>
+
+<body>
+  <ul>
+    <li clas="nav-link"><a href="/books">Library Home</a></li>
+  </ul>
+  <hr>
+  
+  <h1>CodeClan Library</h1>
+  <hr>
+
+  <h2>Add New Book</h2>
+<form class="input" action="/books" method="post">
+
+  <label for="book_title">Title</label><br>
+  <input type="text" name="book_title" id="book_title"><br>
+
+  <label for="author">Author</label><br>
+  <input type="text" name="author" id="author"><br>
+
+  <label for="genre">Genre</label><br>
+  <input type="text" name="genre" id="genre"><br>
+
+  <label for="description">Description</label><br>
+  <textarea name="description" rows="2" cols="30"></textarea><br>
+
+  <label for="availability">Available to borrow</label><br>
+  <input type="checkbox" name="availability" id="availability"><br>
+
+  <input type="submit" value="Add book">
+</form>
+<hr>
+
+    <h2>Book List</h2>
+    <ul>
+        {% for book in books_html %}
+        <li>
+            <a href="http://localhost:4999/books/{{ loop.index0 }}">{{book.title}}</a>, {{book.author}}
+            
+            <form class="input" action="books/delete/{{ loop.index0 }}" method="POST">
+              <input type="submit" value="Delete">
+            </form>
+        </li>
+        
+        {% endfor %}
+
+        
+    </ul>
+
+</body>
+
+</html>
